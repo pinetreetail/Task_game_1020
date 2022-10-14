@@ -27,6 +27,8 @@ public:
 	// î•ñ‚Ìæ“¾
 	Vec2 getPos() const { return m_pos; }
 
+	// ‘¶İ‚·‚é‚©
+	bool isExist() const { return m_isExist; }
 
 private:
 
@@ -43,5 +45,8 @@ private:
 	unsigned int m_color;
 	// “h‚è‚Â‚Ô‚µ
 	bool m_isFill;
+
+	// ‘¶İ‚·‚é‚©
+	bool m_isExist;
 
 };

@@ -27,6 +27,7 @@ public:
 	// î•ñ‚Ìæ“¾
 	Vec2 getPos() const { return m_pos; }
 
+	bool isDead() const { return m_isDead; }
 
 private:
 
@@ -42,5 +43,7 @@ private:
 	unsigned int m_color;
 	// “h‚è‚Â‚Ô‚µ
 	bool m_isFill;
+
+	bool m_isDead;
 
 };

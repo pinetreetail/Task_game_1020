@@ -1,6 +1,12 @@
 #include "DxLib.h"
+#include "game.h"
 #include "movingwall.h"
 
+
+namespace
+{
+	constexpr float kSpeed = 6.0f;
+}
 
 MovingWall::MovingWall()
 {
@@ -37,9 +43,12 @@ void MovingWall::setSize(float x, float y)
 
 void MovingWall::update()
 {
-
-
-
+	if (!m_isExist) return;
+	m_pos.x -= kSpeed;
+	if (m_pos.x < Game::kWindowMode)
+	{
+		m_isExist = false;
+	}
 
 
 

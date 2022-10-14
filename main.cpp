@@ -30,15 +30,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	player.setColor(GetColor(0, 255, 0));
 	player.setFill(true);
 
-	/*
+	
 	MovingWall movingwall;
-	movingwall.setPos(500.0f, 360.0f);
+	movingwall.setPos(1280.0f, 360.0f);
 	movingwall.setSize(40.0f, 600.0f);
 	movingwall.setColor(GetColor(255, 255, 0));
 	movingwall.setFill(false);
 
-		movingwall.draw();
-	*/
+	
 
 
 	while (ProcessMessage() == 0)
@@ -48,7 +47,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ClearDrawScreen();
 
 		player.update();
+		movingwall.update();
+
 		player.draw();
+		movingwall.draw();
 		
 		// — ‰æ–Ê‚ð•\‰æ–Ê‚É“ü‚ê‘Ö‚¦‚é
 		ScreenFlip();

@@ -8,6 +8,7 @@ namespace
 	constexpr float kSpeedMax = 8.0f;
 	constexpr float kAcc = 0.4f;
 
+	
 }
 
 Player::Player()
@@ -15,6 +16,7 @@ Player::Player()
 	m_color = 0;
 	m_isFill = false;
 	
+	m_isDead = false;
 }
 
 Player::~Player()
@@ -45,6 +47,11 @@ void Player::setSize(float x)
 
 void Player::update()
 {
+	if (m_isDead)	return;
+
+
+
+
 	// パッド(もしくはキーボード)からの入力を取得する
 	int padState = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
@@ -84,5 +91,7 @@ void Player::update()
 
 void Player::draw()
 {
+	if (m_isDead)	return;
+
 	DrawCircle(m_pos.x, m_pos.y, m_radius, m_color, m_isFill);
 }
