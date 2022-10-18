@@ -33,7 +33,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	
 	MovingWall movingwall;
 	movingwall.setPos(1280.0f, 360.0f);
-	movingwall.setSize(40.0f, 600.0f);
+	movingwall.setSize(40.0f, 70.0f);
 	movingwall.setColor(GetColor(255, 255, 0));
 	movingwall.setFill(false);
 

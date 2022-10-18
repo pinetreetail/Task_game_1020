@@ -1,4 +1,6 @@
 #include "DxLib.h"
+#include "Vec2.h"
+#include "game.h"
 #include "player.h"
 
 
@@ -55,6 +57,10 @@ void Player::update()
 	// パッド(もしくはキーボード)からの入力を取得する
 	int padState = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
+	if ((m_pos.x - m_radius) < 0) m_pos.x = m_radius;
+	if (m_pos.x > Game::kScreenWidth - m_radius) m_pos.x = Game::kScreenWidth - m_radius;
+	if ((m_pos.y - m_radius) < 0) m_pos.y = m_radius;
+	if (m_pos.y > Game::kScreenHeight - m_radius) m_pos.y = Game::kScreenHeight - m_radius;
 
 	if (padState & PAD_INPUT_UP)
 	{

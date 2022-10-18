@@ -35,9 +35,14 @@ private:
 	Vec2 m_pos;
 	// 移動
 	Vec2 m_vec;
+	// サイズ
+	Vec2 m_size;
+
 
 	// 円の半径
 	float m_radius;
+
+
 
 	// カラー
 	unsigned int m_color;

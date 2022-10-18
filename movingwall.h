@@ -41,6 +41,9 @@ private:
 	// ˆÚ“®
 	Vec2 m_vec;
 
+	// ˆÚ“®•ûŒü
+	int m_vecX;		// XÀ•W
+
 	// ƒJƒ‰[
 	unsigned int m_color;
 	// “h‚è‚Â‚Ô‚µ

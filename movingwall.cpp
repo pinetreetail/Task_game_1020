@@ -5,13 +5,15 @@
 
 namespace
 {
-	constexpr float kSpeed = 6.0f;
+	constexpr float kSpeed = 10.0f;
 }
 
 MovingWall::MovingWall()
 {
 	m_color = 0;
 	m_isFill = false;
+
+	m_vecX = kSpeed;
 }
 
 MovingWall::~MovingWall()
@@ -43,15 +45,28 @@ void MovingWall::setSize(float x, float y)
 
 void MovingWall::update()
 {
-	if (!m_isExist) return;
-	m_pos.x -= kSpeed;
+	//if (!m_isExist) return;
+
+	m_pos.x += m_vecX;
+	if (m_pos.x < 0) 
+	{
+		m_pos.x = 0;
+		m_vecX = kSpeed;
+	}
+	if (m_pos.x > Game::kScreenWidth - m_size.x)
+	{
+		m_pos.x = Game::kScreenWidth - m_size.x;
+		m_vecX = -kSpeed;
+	}
+
+	/*
 	if (m_pos.x < Game::kWindowMode)
 	{
 		m_isExist = false;
 	}
+	*/
 
-
-
+	
 
 
 
